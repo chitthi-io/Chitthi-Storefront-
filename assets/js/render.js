@@ -25,7 +25,8 @@ window.CHITTHI = window.CHITTHI || {};
      placeholder. Never fabricates a preview of a site that isn't built. */
   function thumbMarkup(p){
     if(p.thumb){
-      return `<img src="${esc(p.thumb)}" alt="Screenshot of the ${esc(p.title)} template" loading="lazy" decoding="async">`;
+      const alt = p.thumbAlt || `Preview of the ${p.title} template`;
+      return `<img src="${esc(p.thumb)}" alt="${esc(alt)}" loading="lazy" decoding="async" width="1600" height="1000">`;
     }
     return `
       <div class="thumb-placeholder" aria-hidden="true">
