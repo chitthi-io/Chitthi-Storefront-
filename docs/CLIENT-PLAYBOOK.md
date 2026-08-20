@@ -121,5 +121,5 @@ Never send a link that has not cleared all of these.
 | **Keepsake** | ₹699 | Full personalisation, 20 photos, music, QR card, 2 revisions |
 | **Deluxe Custom** | ₹1,299 | Built from scratch, unlimited sections, 12-hour delivery |
 
-> Prices on the live storefront cards currently read *"Price on request"*.
-> Set `price` and `mrp` per product in `assets/js/data.js` to publish them.
+> Storefront prices are published in `assets/js/data.js` (per-product `price`/`mrp`).
+> Spark ₹399 · Keepsake ₹699 · Deluxe ₹1,299. Change tiers there, then run `tools/bust.py`.
