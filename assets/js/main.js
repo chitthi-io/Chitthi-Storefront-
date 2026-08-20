@@ -170,7 +170,10 @@
     /* Hero stat: count of genuinely live templates, straight from the data */
     const statLive = $("#statLive");
     if(statLive){
-      statLive.textContent = C.PRODUCTS_DATA.filter((p) => p.status === "live").length;
+      const n = C.PRODUCTS_DATA.filter((p) => p.status === "live").length;
+      statLive.textContent = n;
+      const lbl = statLive.nextElementSibling;
+      if(lbl) lbl.textContent = n === 1 ? "Template Live" : "Templates Live";
     }
 
     /* card detail buttons */

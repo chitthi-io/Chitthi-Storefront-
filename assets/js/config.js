@@ -15,7 +15,10 @@ CHITTHI.CONFIG = {
 
   /* ---- Contact ---- */
   whatsapp:     "917078848468",          // country code + number, digits only
-  email:        "hello@chitthi.io",
+  phoneDisplay: "+91 70788 48468",
+  instagram:    "chitthi.io",
+  instagramUrl: "https://instagram.com/chitthi.io",
+  /* No email — WhatsApp and Instagram are the only real contact channels. */
 
   /* ---- GitHub ----------------------------------------------------------
      Each template website lives in its OWN repository (one repo per

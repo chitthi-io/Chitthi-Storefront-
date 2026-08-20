@@ -141,4 +141,4 @@ Every push to `main` publishes the site. Enable it once at
 
 ## Contact
 
-WhatsApp: +91 70788 48468 · hello@chitthi.io
+WhatsApp: +91 70788 48468 · Instagram: [@chitthi.io](https://instagram.com/chitthi.io)
