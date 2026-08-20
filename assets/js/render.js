@@ -36,8 +36,12 @@ window.CHITTHI = window.CHITTHI || {};
 
   /* ---------- price block ---------- */
   function priceMarkup(p){
-    if(p.status !== "live" || !p.price){
+    if(p.status !== "live"){
       return `<span class="price-soon">Pricing announced at launch</span>`;
+    }
+    /* Live, but no price set yet — never invent a number. */
+    if(!p.price){
+      return `<span class="price-soon">Price on request · ask on WhatsApp</span>`;
     }
     const save = p.mrp ? Math.round((1 - p.price / p.mrp) * 100) : 0;
     return `

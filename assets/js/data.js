@@ -51,20 +51,33 @@ CHITTHI.CATEGORIES = [
    3. Here: set status:"live", confirm repo, add price and a real thumb.
    -------------------------------------------------------------------------- */
 CHITTHI.PRODUCTS_DATA = [
+  /* ---- LIVE ---------------------------------------------------------
+     Real website, already published by you:
+     https://chitthi-io.github.io/Chitthi-Happy-Birthday-1/
+     Sections below are taken from the actual page, not invented.
+     TODO: set `price` and add a real screenshot to `thumb`.
+     ------------------------------------------------------------------ */
   {
-    id:       "midnight-birthday-vault",
-    title:    "The Midnight Birthday & Candle Vault",
+    id:       "midnight-keepsake",
+    title:    "A Midnight Keepsake",
     category: "birthday",
-    status:   "soon",
-    repo:     "chitthi-midnight-birthday-vault",
+    status:   "live",
+    repo:     "Chitthi-Happy-Birthday-1",
     demoUrl:  null,
     thumb:    null,
     price:    null,
     mrp:      null,
-    tag:      "Bestseller",
-    mood:     "🎂 12:00 AM Surprise",
-    desc:     "A countdown that unlocks at midnight, then a cake they blow out by tapping the screen. Every candle hides a memory you wrote.",
-    features: ["Midnight unlock timer","Blow-out candle interaction","Photo memory vault","Background music"],
+    tag:      "Live Now",
+    mood:     "🎂 Midnight Birthday",
+    desc:     "A silent wish, a candle to blow out, and every second of them counted. Four framed memories, a letter, and vouchers to claim.",
+    features: [
+      "Silent-wish candle you blow out",
+      "\"Every second of you, counted\" live timer",
+      "Four-frame photo gallery",
+      "Private letter section",
+      "Tap-to-claim birthday vouchers",
+      "Background song, iPhone-safe tap to start"
+    ],
     icon:     "🎂"
   },
   {

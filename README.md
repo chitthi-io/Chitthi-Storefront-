@@ -3,7 +3,7 @@
 The public storefront for **chitthi.io**: interactive digital keepsakes (mini gift
 websites) built to order and delivered in 24 hours over WhatsApp.
 
-Repo: `Chitthi-Storefront`
+Repo: `Chitthi-Storefront-` (the trailing hyphen is part of the real repo name)
 
 ---
 
@@ -14,8 +14,8 @@ repository with its own GitHub Pages deployment, so each one can be shared,
 versioned and demoed independently.
 
 ```
-Chitthi-Storefront/          <- this repo (the shop)
-chitthi-midnight-birthday-vault/   <- one repo per template
+Chitthi-Storefront-/               <- this repo (the shop)
+Chitthi-Happy-Birthday-1/          <- LIVE: one repo per template
 chitthi-ldr-bridge/
 chitthi-be-mine-proposal/
 ...

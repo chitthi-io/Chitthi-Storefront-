@@ -27,8 +27,8 @@ CHITTHI.CONFIG = {
      If a template uses a custom domain instead, put the full URL in that
      product's `demoUrl` field in data.js and it overrides this pattern.
   --------------------------------------------------------------------- */
-  githubUser:      "YOUR_GITHUB_USERNAME",   // <-- set this
-  storefrontRepo:  "Chitthi-Storefront",
+  githubUser:      "chitthi-io",
+  storefrontRepo:  "Chitthi-Storefront-",   // note: trailing hyphen is part of the real repo name
 
   /* ---- Copy ---- */
   waDefaultMsg: "Hi! I want to order a custom gift website",
@@ -55,7 +55,7 @@ CHITTHI.waLink = function(message){
 CHITTHI.demoUrl = function(product){
   if(!product || product.status !== "live") return null;
   if(product.demoUrl) return product.demoUrl;
-  if(product.repo && CHITTHI.CONFIG.githubUser !== "YOUR_GITHUB_USERNAME"){
+  if(product.repo && CHITTHI.CONFIG.githubUser){
     return `https://${CHITTHI.CONFIG.githubUser}.github.io/${product.repo}/`;
   }
   return null;
@@ -64,6 +64,5 @@ CHITTHI.demoUrl = function(product){
 /** Repository URL for a template (used in the modal for live templates). */
 CHITTHI.repoUrl = function(product){
   if(!product || !product.repo) return null;
-  if(CHITTHI.CONFIG.githubUser === "YOUR_GITHUB_USERNAME") return null;
   return `https://github.com/${CHITTHI.CONFIG.githubUser}/${product.repo}`;
 };

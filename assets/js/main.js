@@ -167,6 +167,12 @@
     const yr = $("#yr");
     if(yr) yr.textContent = new Date().getFullYear();
 
+    /* Hero stat: count of genuinely live templates, straight from the data */
+    const statLive = $("#statLive");
+    if(statLive){
+      statLive.textContent = C.PRODUCTS_DATA.filter((p) => p.status === "live").length;
+    }
+
     /* card detail buttons */
     const grid = $("#grid");
     if(grid){
