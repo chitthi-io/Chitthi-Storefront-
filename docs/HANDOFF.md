@@ -152,9 +152,11 @@ between sessions, so re-run `python3 -m playwright install chromium` each time.
 ## 7. OUTSTANDING WORK
 
 **Blocking a real launch**
-1. **Prices** — all 8 cards render *"Price on request · ask on WhatsApp"*.
-   Set `price` and `mrp` per product in `assets/js/data.js`. Tiers are
-   Spark ₹399 · Keepsake ₹699 · Deluxe ₹1,299.
+
+1. ~~**Prices**~~ ✅ **DONE 20 Aug 2026** — published in `assets/js/data.js`:
+   Keepsake ₹699/mrp ₹899 (01–05), Spark ₹399/mrp ₹499 (06–07),
+   Deluxe ₹1,299/mrp ₹1,599 (08). Verified live on Netlify + GH Pages via
+   Playwright DOM check (8 price rows, SAVE badges, priced WhatsApp links).
 2. **Reviews** — `REVIEWS_DATA` is deliberately empty. Add only real ones.
 
 **Content quality**
