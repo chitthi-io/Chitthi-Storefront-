@@ -13,10 +13,24 @@
              background var(--t-fast), color var(--t-fast), border-color var(--t-fast);
 }
 .btn:hover{ transform:translateY(-2px); }
-.btn:active{ transform:translateY(0); }
+/* Tactile spring press — snappy 120ms press-in, springy release out. */
+.btn:not([disabled]):not([aria-disabled="true"]):active{
+  transform:scale(.95);
+  transition:transform .12s ease, box-shadow .12s ease,
+             background var(--t-fast), color var(--t-fast), border-color var(--t-fast);
+}
 
-.btn-primary{ background:var(--ink); color:#fff; box-shadow:var(--sh-md); }
-.btn-primary:hover{ background:#000; box-shadow:var(--sh-lg); }
+.btn-primary{
+  background:var(--ink); color:#fff; box-shadow:var(--sh-md);
+  animation:ambientPulse 3.4s ease-in-out infinite;
+}
+.btn-primary:hover{ background:#000; box-shadow:var(--sh-lg); animation:none; }
+/* Ambient breathing glow on primary actions — rose halo in brand accent.
+   Small paint area (one button), paused on hover, off under reduced motion. */
+@keyframes ambientPulse{
+  0%,100%{ box-shadow:0 4px 20px rgba(200,122,125,.18); }
+  50%    { box-shadow:0 8px 28px rgba(200,122,125,.32); }
+}
 
 .btn-accent{ background:var(--accent); color:#fff; box-shadow:0 8px 20px -8px rgba(200,122,125,.75); }
 .btn-accent:hover{ background:var(--accent-deep); }
@@ -72,6 +86,7 @@
 }
 .ig-link svg{ width:19px; height:19px; }
 .ig-link:hover{ background:var(--accent-soft); color:var(--accent-deep); transform:translateY(-2px); }
+.ig-link:active{ transform:scale(.9); transition:transform .12s ease; }
 
 .nav-links{ display:flex; align-items:center; gap:6px; }
 .nlink{
@@ -80,6 +95,7 @@
   transition:background var(--t-fast), color var(--t-fast);
 }
 .nlink:hover{ background:var(--accent-soft); color:var(--accent-deep); }
+.nlink:active{ transform:scale(.95); transition:transform .12s ease; }
 .nav-cta{ margin-left:8px; }
 
 .burger{
@@ -98,6 +114,7 @@
 .burger.on span{ background:transparent; }
 .burger.on span::before{ top:0; transform:rotate(45deg); }
 .burger.on span::after { top:0; transform:rotate(-45deg); }
+.burger:active{ transform:scale(.94); transition:transform .12s ease; }
 
 .mobile-menu{
   display:none; flex-direction:column; gap:6px; padding:0 var(--gutter);
@@ -135,6 +152,7 @@
   background:var(--accent-soft); color:var(--accent-deep); transition:var(--t-med);
 }
 .pill.active .cnt{ background:rgba(255,255,255,.18); color:#fff; }
+.pill:active{ transform:scale(.95); transition:transform .12s ease; }
 
 /* ---------- PRODUCT CARD ---------- */
 .card{
@@ -145,12 +163,22 @@
 }
 .card:hover{ transform:translateY(-6px); box-shadow:var(--sh-lg); border-color:#DFD7CD; }
 
+/* Scroll-reveal entrance for grid cards — classes added by main.js and
+   stripped once the entrance finishes, so hover keeps its 0.4s lift. */
+.card.will-reveal{
+  opacity:0; transform:translateY(28px) scale(.98);
+  transition:opacity .85s var(--ease-spring) calc(var(--index, 0) * 90ms),
+             transform .85s var(--ease-spring) calc(var(--index, 0) * 90ms);
+  will-change:transform, opacity;
+}
+.card.will-reveal.in{ opacity:1; transform:none; }
+
 /* filter fade-out */
 .card.hide{
   opacity:0; transform:scale(.94) translateY(10px);
   pointer-events:none; position:absolute; visibility:hidden;
 }
-.card.enter{ animation:cardIn .5s var(--ease) both; }
+.card.enter{ animation:cardIn .55s var(--ease-spring) both; }
 @keyframes cardIn{
   from{ opacity:0; transform:translateY(16px) scale(.97); }
   to  { opacity:1; transform:none; }
@@ -318,7 +346,7 @@
   margin-left:auto; flex:none; width:26px; height:26px; border-radius:50%;
   background:var(--accent-soft); color:var(--accent-deep);
   display:grid; place-items:center; font-size:1.05rem; line-height:1;
-  transition:transform .35s var(--ease), background var(--t-med);
+  transition:transform .35s var(--ease-bounce), background var(--t-med);
 }
 .q.open .ic{ transform:rotate(45deg); background:var(--accent); color:#fff; }
 .a{ max-height:0; overflow:hidden; transition:max-height .42s var(--ease); }
@@ -341,13 +369,14 @@
 .modal{
   position:fixed; inset:0; z-index:200; display:grid; place-items:center; padding:20px;
   background:rgba(24,20,18,.55); backdrop-filter:blur(7px);
-  opacity:0; pointer-events:none; transition:opacity var(--t-med) var(--ease);
+  opacity:0; pointer-events:none; transition:opacity var(--t-med) var(--ease-spring);
 }
 .modal.on{ opacity:1; pointer-events:auto; }
 .modal-box{
   background:var(--card); border-radius:var(--r-lg); width:min(560px,100%);
   max-height:88vh; overflow:auto; box-shadow:var(--sh-lg); border:1px solid var(--border);
-  transform:translateY(18px) scale(.97); transition:transform .38s var(--ease);
+  transform:translateY(18px) scale(.97); transition:transform .5s var(--ease-bounce);
+  will-change:transform;
 }
 .modal.on .modal-box{ transform:none; }
 .modal-art{ position:relative; aspect-ratio:16/10; overflow:hidden; background:var(--accent-soft); }  /* matches the 1600x1000 thumbnails exactly — no crop */
@@ -359,6 +388,7 @@
   transition:transform .25s var(--ease);
 }
 .modal-x:hover{ transform:rotate(90deg); }
+.modal-x:active{ transform:scale(.9); transition:transform .12s ease; }
 .modal-in{ padding:26px 26px 28px; }
 .modal-in h3{ font-size:1.55rem; }
 .modal-in .mdesc{ color:var(--muted); font-size:.94rem; margin-top:10px; line-height:1.7; }
@@ -389,6 +419,7 @@
   animation-play-state:paused;
   box-shadow:0 18px 40px -12px rgba(37,211,102,.95);
 }
+.float-wa:active{ transform:scale(.94); transition:transform .12s ease; }
 .float-wa svg{ width:19px; height:19px; flex:none; }
 @keyframes glow{
   0%,100%{ box-shadow:0 12px 30px -10px rgba(37,211,102,.8), 0 0 0 0 rgba(37,211,102,.45); }
@@ -400,6 +431,6 @@
   position:fixed; left:50%; bottom:32px; transform:translate(-50%,120%);
   background:var(--ink); color:#fff; padding:12px 22px; border-radius:var(--r-pill);
   font-size:.86rem; font-weight:600; z-index:300; box-shadow:var(--sh-lg);
-  transition:transform .45s var(--ease);
+  transition:transform .5s var(--ease-bounce);
 }
 .toast.on{ transform:translate(-50%,0); }

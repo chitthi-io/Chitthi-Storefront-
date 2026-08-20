@@ -141,6 +141,7 @@ Each of these cost real time. They will bite again.
 | Audio silent on iPhone | `play()` must be the **first** statement in the tap handler; any `await`/timeout first discards the activation token | Also keep `preload="none"` so 3.7MB doesn't download on load |
 | "Author identity unknown" | `.git/config` is **excluded from workspace snapshots** and is wiped between sessions | Re-run `git config user.name/user.email` at the start of every session |
 | External asset 404/403 | mixkit `403`, Tenor `404`, Giphy API `BANNED`, Unsplash rate limits | **Self-host everything.** All images, GIFs and audio live in their repos |
+| `.reveal` classes vanish from the DOM after the entrance | By design (20 Aug 2026): `main.js initReveal()` strips `reveal`/`will-reveal`/`in` + inline `transition-delay` on settle so hover/filter transitions stay snappy. If a reveal looks missing, check `prefers-reduced-motion` or that the element was in the viewport when observed | Not a bug — stagger lives in `--index` × 90ms; don't re-add reveal classes in other scripts |
 
 **Verification rule learned the hard way:** an HTTP 200 on an asset proves the
 file is reachable, **not that it renders**. Playwright is installed — drive the

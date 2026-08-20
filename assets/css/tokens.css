@@ -38,8 +38,13 @@
   --sh-md: 0 6px 22px -8px rgba(34,38,47,.14);
   --sh-lg: 0 22px 48px -20px rgba(34,38,47,.28);
 
-  /* ---- Motion ---- */
-  --ease: cubic-bezier(.22,1,.36,1);
+  /* ---- Motion ----
+     Transform/opacity only on these curves — never layout properties.
+     bounce overshoots, so it is reserved for transforms (modal pop, toast,
+     icon spins); using it on height/width/max-height would thrash layout. */
+  --ease:        cubic-bezier(.22,1,.36,1);    /* legacy alias of spring */
+  --ease-spring: cubic-bezier(.22,1,.36,1);    /* editorial deceleration */
+  --ease-bounce: cubic-bezier(.34,1.56,.64,1); /* soft overshoot & settle */
   --t-fast: .2s;
   --t-med:  .32s;
   --t-slow: .55s;

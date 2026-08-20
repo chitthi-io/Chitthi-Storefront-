@@ -86,26 +86,80 @@
     }
   }
 
-  /* ---------- scroll reveal ---------- */
+  /* ---------- scroll reveal ----------
+     Staggered scroll-driven entrances for .reveal (static markup) and the
+     JS-rendered grid cards (.will-reveal, added here).
+
+     - Stagger: --index = position among revealable siblings, * 90ms.
+     - The observer also sets an inline transition-delay. Component rules
+       (e.g. .tier) re-declare `transition` and would reset the CSS var
+       delay, and inline style always wins the cascade.
+     - After an entrance finishes we strip the reveal classes and the inline
+       delay, so hover/filter transitions keep their snappy timings.
+     - Reduced motion: nothing is ever hidden; reveals are skipped. */
   function initReveal(){
-    const els = $$(".reveal");
-    if(!("IntersectionObserver" in window)){
-      els.forEach((el) => el.classList.add("in"));
+    const reduced = window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const statics = $$(".reveal");
+    const cards   = $$(".card");
+    const targets = [];
+
+    const staggerIndex = (el, list) => {
+      const parent = el.parentElement;
+      return Math.max(0, list.filter((x) => x.parentElement === parent).indexOf(el));
+    };
+
+    statics.forEach((el) => {
+      const i = staggerIndex(el, statics);
+      el.style.setProperty("--index", i);
+      el.style.transitionDelay = (i * 90) + "ms";
+      targets.push(el);
+    });
+
+    cards.forEach((el) => {
+      const i = staggerIndex(el, cards);
+      el.classList.add("will-reveal");
+      el.style.setProperty("--index", i);
+      el.style.transitionDelay = (i * 90) + "ms";
+      targets.push(el);
+    });
+
+    /* restore pristine base styles once the entrance is over */
+    const settle = (el) => {
+      let done = false;
+      const finish = () => {
+        if(done) return;
+        done = true;
+        el.removeEventListener("transitionend", onEnd);
+        el.style.transitionDelay = "";
+        el.classList.remove("will-reveal", "reveal", "in");
+      };
+      const onEnd = (e) => {
+        if(e.propertyName === "transform" || e.propertyName === "opacity") finish();
+      };
+      el.addEventListener("transitionend", onEnd);
+      setTimeout(finish, 1800); /* safety net — .85s + max 630ms stagger */
+    };
+
+    const show = (el) => { el.classList.add("in"); settle(el); };
+
+    if(reduced || !("IntersectionObserver" in window)){
+      statics.forEach((el) => el.classList.add("in"));
+      cards.forEach((el) => el.classList.remove("will-reveal"));
       return;
     }
+
     const io = new IntersectionObserver((entries) => {
       entries.forEach((en) => {
         if(en.isIntersecting){
-          en.target.classList.add("in");
+          show(en.target);
           io.unobserve(en.target);
         }
       });
     }, { threshold:.12, rootMargin:"0px 0px -40px 0px" });
 
-    els.forEach((el, i) => {
-      el.style.transitionDelay = (i % 4) * 60 + "ms";
-      io.observe(el);
-    });
+    targets.forEach((el) => io.observe(el));
   }
 
   /* ---------- footer occasion jumps ---------- */
