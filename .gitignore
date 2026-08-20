@@ -47,3 +47,6 @@ build/
 /.mozilla/
 /.dbus/
 /.sudo_as_admin_successful
+
+# generated thumbnails are build output, not source
+/thumbnails/
