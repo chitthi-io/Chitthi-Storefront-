@@ -1,0 +1,75 @@
+# ==========================================================================
+# chitthi.io storefront — Netlify configuration
+# Static site, no build step. Everything is served straight from the repo.
+# ==========================================================================
+
+[build]
+  # No bundler, no framework — publish the repo root as-is.
+  publish = "."
+  command = ""
+
+# --------------------------------------------------------------------------
+# Security + caching headers
+# --------------------------------------------------------------------------
+
+# HTML: always revalidate so template/price edits go live immediately.
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=(), interest-cohort=()"
+
+# CSS/JS: short cache — these change whenever the catalogue is edited.
+[[headers]]
+  for = "/assets/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+[[headers]]
+  for = "/assets/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+# Images: long cache, they are replaced by filename not by edit.
+[[headers]]
+  for = "/assets/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/brand/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+# --------------------------------------------------------------------------
+# Redirects
+# --------------------------------------------------------------------------
+
+# Convenience shortlinks for WhatsApp / Instagram bio.
+[[redirects]]
+  from = "/whatsapp"
+  to = "https://wa.me/917078848468?text=Hi!%20I%20want%20to%20order%20a%20custom%20gift%20website"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/instagram"
+  to = "https://instagram.com/chitthi.io"
+  status = 302
+  force = true
+
+# Send visitors straight to a template demo.
+[[redirects]]
+  from = "/ldr"
+  to = "https://chitthi-io.github.io/Chitthi-Until-We-Meet-Again/"
+  status = 302
+  force = true
+
+# Anything unmatched falls back to the branded 404 page.
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Letter not found — chitthi.io</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/img/favicon.png" type="image/png">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<style>
+  body{ display:grid; place-items:center; min-height:100dvh; text-align:center; padding:28px; }
+  .box{ max-width:460px; }
+  .mark{ width:74px; margin:0 auto 26px; }
+  h1{ font-size:clamp(1.9rem,6vw,2.7rem); }
+  h1 em{ font-style:italic; color:var(--accent); }
+  p{ color:var(--muted); margin-top:14px; font-size:1rem; }
+  .row{ display:flex; gap:11px; justify-content:center; flex-wrap:wrap; margin-top:30px; }
+  a.btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:13px 26px; border-radius:999px; font-weight:700; font-size:.93rem;
+    text-decoration:none; transition:transform .3s cubic-bezier(.22,1,.36,1);
+  }
+  a.btn:hover{ transform:translateY(-2px); }
+  .dark{ background:var(--ink); color:#fff; }
+  .soft{ background:var(--card); color:var(--ink); border:1px solid var(--border); }
+</style>
+</head>
+<body>
+  <div class="box">
+    <img class="mark" src="assets/img/logo-mark.png" alt="chitthi.io">
+    <h1>This letter went <em>astray</em></h1>
+    <p>The page you're looking for isn't here — but every keepsake we've made still is.</p>
+    <div class="row">
+      <a class="btn dark" href="/">Back to the collection</a>
+      <a class="btn soft" href="https://wa.me/917078848468?text=Hi!%20I%20want%20to%20order%20a%20custom%20gift%20website" target="_blank" rel="noopener">Chat on WhatsApp 💬</a>
+    </div>
+  </div>
+</body>
+</html>
