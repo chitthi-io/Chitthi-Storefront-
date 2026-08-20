@@ -64,8 +64,7 @@ CHITTHI.demoUrl = function(product){
   return null;
 };
 
-/** Repository URL for a template (used in the modal for live templates). */
-CHITTHI.repoUrl = function(product){
-  if(!product || !product.repo) return null;
-  return `https://github.com/${CHITTHI.CONFIG.githubUser}/${product.repo}`;
-};
+/* NOTE: there is deliberately no repoUrl() helper.
+   The storefront must never link to a template's source repository —
+   the code is the product being sold. `product.repo` is used only to
+   build the public demo URL. */

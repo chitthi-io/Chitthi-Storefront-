@@ -37,3 +37,13 @@ build/
 /backups/
 /build-*/
 /uploads/
+
+# home-directory noise created by toolchains (apt, playwright, chromium)
+/.config/
+/.local/
+/.cache/
+/.npm/
+/.pki/
+/.mozilla/
+/.dbus/
+/.sudo_as_admin_successful

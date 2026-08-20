@@ -210,7 +210,6 @@ window.CHITTHI = window.CHITTHI || {};
     lastFocus = document.activeElement;
     const isLive = p.status === "live";
     const demo   = C.demoUrl(p);
-    const repo   = C.repoUrl(p);
 
     $("#mArt").innerHTML =
       `<button class="modal-x" id="mClose" aria-label="Close preview">✕</button>` + thumbMarkup(p);
@@ -221,9 +220,10 @@ window.CHITTHI = window.CHITTHI || {};
     $("#mChips").innerHTML = (p.features || [])
       .map((f) => `<span class="chip">✦ ${esc(f)}</span>`).join("");
 
-    /* status note — honest about what exists */
+    /* status note. Deliberately never links to the repository: the source
+       is the product, so it is not advertised from the storefront. */
     $("#mStatus").innerHTML = isLive
-      ? (repo ? `<span class="chip">📦 Source: <a href="${esc(repo)}" target="_blank" rel="noopener" style="color:var(--accent);font-weight:700;">${esc(p.repo)}</a></span>` : "")
+      ? `<span class="chip">✅ Ready to personalise · delivered in 24 hours</span>`
       : `<span class="chip">🚧 This template is still in development — no live demo yet.</span>`;
 
     const demoBtn = $("#mDemo");

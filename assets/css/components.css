@@ -350,7 +350,7 @@
   transform:translateY(18px) scale(.97); transition:transform .38s var(--ease);
 }
 .modal.on .modal-box{ transform:none; }
-.modal-art{ position:relative; aspect-ratio:16/9; overflow:hidden; background:var(--accent-soft); }
+.modal-art{ position:relative; aspect-ratio:16/10; overflow:hidden; background:var(--accent-soft); }  /* matches the 1600x1000 thumbnails exactly — no crop */
 .modal-art img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
 .modal-x{
   position:absolute; top:12px; right:12px; z-index:3; width:34px; height:34px;
