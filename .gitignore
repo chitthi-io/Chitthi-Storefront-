@@ -32,3 +32,8 @@ build/
 /client-assets/
 *.psd
 *.fig
+
+# working dirs, not part of the storefront
+/backups/
+/build-*/
+/uploads/

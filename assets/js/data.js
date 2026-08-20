@@ -81,19 +81,26 @@ CHITTHI.PRODUCTS_DATA = [
     icon:     "🎂"
   },
   {
-    id:       "until-we-meet-ldr-bridge",
-    title:    "Until We Meet Again LDR Bridge",
+    id:       "until-we-meet-again",
+    title:    "Until We Meet Again",
     category: "ldr",
-    status:   "soon",
-    repo:     "chitthi-ldr-bridge",
+    status:   "live",
+    repo:     "Chitthi-Until-We-Meet-Again",
     demoUrl:  null,
     thumb:    null,
     price:    null,
     mrp:      null,
-    tag:      "Most Loved",
-    mood:     "✈️ Live Distance Counter",
-    desc:     "A live counter of the kilometres and days between you, and a runway of shared photos that shrinks with every visit.",
-    features: ["Live distance + days counter","Two-timezone clocks","Reunion countdown","Voice-note embed"],
+    tag:      "Live Now",
+    mood:     "✈️ 4-Stage Journey",
+    desc:     "A distance gate, a live reunion countdown, polaroids that flip to reveal hidden notes, and a handwritten letter that ends in confetti.",
+    features: [
+      "Distance gate with real km between your cities",
+      "Live reunion countdown to the second",
+      "Send a Virtual Hug — floating hearts + haptics",
+      "Tap-to-flip 3D polaroid deck",
+      "Handwritten letter with confetti finale",
+      "Glassmorphic music player, iPhone-safe"
+    ],
     icon:     "✈️"
   },
   {
