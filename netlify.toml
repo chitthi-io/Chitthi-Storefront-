@@ -22,16 +22,18 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "geolocation=(), microphone=(), camera=(), interest-cohort=()"
 
-# CSS/JS: short cache — these change whenever the catalogue is edited.
+# CSS/JS: ALWAYS revalidate. These carry a ?v=<hash> so an unchanged file
+# still answers 304 (a few bytes), but an edited one is picked up instantly.
+# A previous max-age=3600 here meant returning visitors saw hour-old code.
 [[headers]]
   for = "/assets/css/*"
   [headers.values]
-    Cache-Control = "public, max-age=3600, must-revalidate"
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
   for = "/assets/js/*"
   [headers.values]
-    Cache-Control = "public, max-age=3600, must-revalidate"
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 # Images: long cache, they are replaced by filename not by edit.
 [[headers]]

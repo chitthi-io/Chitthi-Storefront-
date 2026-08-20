@@ -122,6 +122,16 @@ update automatically — no other file needs touching.
 
 ---
 
+## Before every commit
+
+```bash
+python3 tools/bust.py
+```
+
+Stamps `?v=<content-hash>` onto every CSS/JS reference in the HTML. Without
+it, returning visitors keep their cached copies and will not see your edits.
+Unchanged files keep their hash, so they stay cached.
+
 ## Local development
 
 ```bash
