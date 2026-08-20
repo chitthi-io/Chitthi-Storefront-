@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>chitthi.io — Interactive Digital Keepsakes, Delivered in 24 Hours</title>
+<meta name="description" content="Custom mini-websites coded for Birthdays, Anniversaries, LDR Couples & Apologies. Delivered in 24 hours via WhatsApp." />
+<meta name="theme-color" content="#FAF8F5" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="chitthi.io — Interactive Digital Keepsakes" />
+<meta property="og:description" content="Custom mini-websites for Birthdays, Anniversaries, LDR Couples & Apologies. Delivered in 24 hours." />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+<!-- Stylesheets (load order matters: tokens -> base -> layout -> components -> responsive) -->
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+<a class="skip" href="#browse">Skip to templates</a>
+
+<!-- ============ NAVBAR ============ -->
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="brand" aria-label="chitthi.io home">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-8.2-4.9-10.2-9.5C.3 8 2.2 4.5 5.6 3.8 8 3.3 10.4 4.4 12 6.4c1.6-2 4-3.1 6.4-2.6 3.4.7 5.3 4.2 3.8 7.7C20.2 16.1 12 21 12 21z"/></svg>
+      chitthi<span class="dot-io">.io</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <a class="nlink" href="#browse">Browse Gifts</a>
+      <a class="nlink" href="#how">How It Works</a>
+      <a class="nlink" href="#pricing">Pricing</a>
+      <a class="btn btn-accent btn-sm nav-cta" data-wa="Hi! I want to order a custom gift website">Order Custom Link 💌</a>
+    </nav>
+
+    <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#browse">Browse Gifts</a>
+    <a href="#how">How It Works</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a class="btn btn-accent" data-wa="Hi! I want to order a custom gift website">Order Custom Link 💌</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="wrap hero-in">
+      <span class="badge-trust reveal">✨ Trusted by 10+ couples &amp; friends across India 🇮🇳</span>
+
+      <h1 class="reveal">Turn Your Special Moments Into <em>Interactive</em> Digital Keepsakes</h1>
+
+      <p class="sub reveal">Custom mini-websites coded for Birthdays, Anniversaries, LDR Couples &amp; Apologies. Delivered in 24 Hours via WhatsApp.</p>
+
+      <div class="hero-actions reveal">
+        <a class="btn btn-primary btn-lg" href="#browse">Explore Templates 👇</a>
+        <a class="btn btn-wa btn-lg" data-wa="Hi! I want to order a custom gift website">Custom Order on WhatsApp 💬</a>
+      </div>
+
+      <div class="hero-stats reveal">
+        <div><b>24 hrs</b><span>Average Delivery</span></div>
+        <div><b>8</b><span>Templates In Build</span></div>
+        <div><b>₹399</b><span>Starting Price</span></div>
+        <div><b>100%</b><span>Private Links</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CATALOGUE ============ -->
+  <section class="sec sec--tight" id="browse">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">The Collection</span>
+        <h2>Pick a Template, We <span class="ital">Personalise</span> It</h2>
+        <p>Every keepsake is hand-coded with your photos, names, dates and song — then delivered as a private link you can share forever.</p>
+      </div>
+
+      <div class="filters reveal" id="filters" role="tablist" aria-label="Filter templates by category"></div>
+
+      <div class="grid" id="grid" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="sec sec--panel" id="how">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">How It Works</span>
+        <h2>Three Simple Steps</h2>
+        <p>No apps, no accounts, no design skills. Just a chat on WhatsApp and a link in your hands by tomorrow.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step reveal">
+          <div class="num">💡</div>
+          <span class="idx">Step 01</span>
+          <h3>Choose a Concept</h3>
+          <p>Pick a template from the collection above or share a custom idea — we'll shape it around your story.</p>
+        </div>
+        <div class="step reveal">
+          <div class="num">📸</div>
+          <span class="idx">Step 02</span>
+          <h3>Share Photos &amp; Music</h3>
+          <p>Fill a 2-minute form or send everything via WhatsApp — pictures, names, dates and your favourite song.</p>
+        </div>
+        <div class="step reveal">
+          <div class="num">🎁</div>
+          <span class="idx">Step 03</span>
+          <h3>Receive in 24 Hours</h3>
+          <p>Get your private link plus a printable Heart QR Card, ready to gift, scan and treasure forever.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRICING ============ -->
+  <section class="sec" id="pricing">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Pricing</span>
+        <h2>Simple, Honest <span class="ital">Packages</span></h2>
+        <p>One-time payment. Free hosting for 12 months. No hidden charges, ever.</p>
+      </div>
+
+      <div class="tiers">
+        <!-- Spark -->
+        <div class="tier reveal">
+          <h3>Spark</h3>
+          <p class="tline">A sweet one-page surprise for a quick, heartfelt moment.</p>
+          <div class="amt">₹399<small>one-time</small></div>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> 1 template, lightly personalised</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Up to 5 photos</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Private shareable link</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Delivered in 24 hours</li>
+            <li class="off"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg> Background music</li>
+            <li class="off"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg> Printable Heart QR Card</li>
+          </ul>
+          <a class="btn btn-ghost" data-wa="Hi! I want the Spark package (₹399)">Choose Spark 💌</a>
+        </div>
+
+        <!-- Keepsake -->
+        <div class="tier feat reveal">
+          <h3>Keepsake</h3>
+          <p class="tline">Our most-loved pack — full template, music and QR card.</p>
+          <div class="amt">₹699<small>one-time</small></div>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Any template, fully personalised</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Up to 20 photos + captions</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Background music of your choice</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Printable Heart QR Card (PDF)</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> 2 free revision rounds</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> 12 months free hosting</li>
+          </ul>
+          <a class="btn btn-accent" data-wa="Hi! I want the Keepsake package (₹699)">Choose Keepsake 💌</a>
+        </div>
+
+        <!-- Deluxe -->
+        <div class="tier reveal">
+          <h3>Deluxe Custom</h3>
+          <p class="tline">Built from scratch around your story — no template limits.</p>
+          <div class="amt">₹1,299<small>one-time</small></div>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> 100% custom concept &amp; design</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Unlimited photos &amp; sections</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Mini-games, quizzes &amp; countdowns</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Custom domain setup guidance</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Priority 12-hour delivery</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Unlimited revisions for 7 days</li>
+          </ul>
+          <a class="btn btn-ghost" data-wa="Hi! I want the Deluxe Custom package (₹1,299)">Choose Deluxe 💌</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REVIEWS + FAQ ============ -->
+  <section class="sec sec--panel" id="faq">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Loved By Gifters</span>
+        <h2>Little Notes From <span class="ital">Real</span> Orders</h2>
+      </div>
+
+      <div class="reviews" id="reviews"></div>
+
+      <div class="sec-head reveal" style="margin-bottom:32px;">
+        <span class="eyebrow">FAQ</span>
+        <h2>Questions, Answered</h2>
+      </div>
+
+      <div class="faq" id="faqList"></div>
+    </div>
+  </section>
+
+  <!-- ============ CTA BAND ============ -->
+  <section class="sec" style="padding-bottom:0;">
+    <div class="wrap">
+      <div class="band reveal">
+        <h2>Have an idea we haven't built yet?</h2>
+        <p>Tell us the story, the person and the occasion. We'll turn it into a link they'll never delete.</p>
+        <a class="btn btn-wa btn-lg" data-wa="Hi! I want to order a custom gift website">Start on WhatsApp 💬</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="f-top">
+      <div>
+        <a href="#top" class="brand">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-8.2-4.9-10.2-9.5C.3 8 2.2 4.5 5.6 3.8 8 3.3 10.4 4.4 12 6.4c1.6-2 4-3.1 6.4-2.6 3.4.7 5.3 4.2 3.8 7.7C20.2 16.1 12 21 12 21z"/></svg>
+          chitthi<span class="dot-io">.io</span>
+        </a>
+        <p>Handwritten letters, reimagined as code. Interactive digital keepsakes made in India, delivered in 24 hours.</p>
+      </div>
+
+      <div class="f-cols">
+        <div class="f-col">
+          <h4>Explore</h4>
+          <a href="#browse">Browse Gifts</a>
+          <a href="#how">How It Works</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#faq">FAQ</a>
+        </div>
+        <div class="f-col">
+          <h4>Occasions</h4>
+          <a href="#browse" data-jump="birthday">Birthday</a>
+          <a href="#browse" data-jump="love">Love &amp; Anniversary</a>
+          <a href="#browse" data-jump="ldr">Long Distance</a>
+          <a href="#browse" data-jump="friendship">Friendship</a>
+        </div>
+        <div class="f-col">
+          <h4>Contact</h4>
+          <a data-wa="Hi! I want to order a custom gift website">WhatsApp Us</a>
+          <a href="mailto:hello@chitthi.io">hello@chitthi.io</a>
+          <a href="#browse">Order Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="f-bot">
+      <span>© <span id="yr"></span> chitthi.io — Made with 💌 in India.</span>
+      <span>Privacy first · Your photos are never reused.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ FLOATING WHATSAPP ============ -->
+<a class="float-wa" data-wa="Hi! I want to order a custom gift website" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2A10 10 0 0 0 3.5 17.2L2 22l4.9-1.6A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.2-.4-4.5-1.2l-.3-.2-3 1 1-2.9-.2-.3a8.2 8.2 0 1 1 7 3.6z"/></svg>
+  <span class="label">Chat on WhatsApp 💬</span>
+</a>
+
+<!-- ============ DETAILS MODAL ============ -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="modal-box">
+    <div class="modal-art" id="mArt">
+      <button class="modal-x" id="mClose" aria-label="Close preview">✕</button>
+    </div>
+    <div class="modal-in">
+      <h3 id="mTitle"></h3>
+      <p class="mdesc" id="mDesc"></p>
+      <div class="chips" id="mChips"></div>
+      <div class="chips" id="mStatus"></div>
+      <div class="modal-foot">
+        <span id="mPriceSlot"></span>
+        <a class="btn btn-ghost btn-sm" id="mDemo" target="_blank" rel="noopener">Open Live Demo 👁️</a>
+        <a class="btn btn-wa btn-sm" id="mOrder" target="_blank" rel="noopener">Order on WhatsApp 💌</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- Scripts (classic, no modules — works over file:// too) -->
+<script src="assets/js/config.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/render.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

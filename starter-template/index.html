@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>A little something for you 💌</title>
+<meta name="robots" content="noindex, nofollow" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* =============================================================
+   chitthi.io — TEMPLATE STARTER
+   A real, working skeleton for ONE gift website.
+   Copy this folder into a new repo, edit the GIFT object below,
+   drop photos in assets/, enable GitHub Pages. Done.
+   ============================================================= */
+:root{
+  --bg:#FAF8F5; --card:#FFF; --ink:#22262F; --accent:#C87A7D;
+  --accent-soft:#F6E9E8; --border:#EAE5DF; --muted:#6B7280;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:"Plus Jakarta Sans",sans-serif;line-height:1.7;
+  overflow-x:hidden;
+}
+h1,h2{font-family:"Playfair Display",serif;font-weight:600;line-height:1.2;}
+.wrap{max-width:680px;margin-inline:auto;padding:0 22px;}
+
+/* ---- Tap to begin (unlocks audio on iOS) ---- */
+#gate{
+  position:fixed;inset:0;z-index:100;display:grid;place-items:center;
+  background:var(--bg);text-align:center;padding:24px;
+  transition:opacity .6s var(--ease),visibility .6s;
+}
+#gate.gone{opacity:0;visibility:hidden;}
+#gate .heart{font-size:3.4rem;animation:pulse 1.8s infinite;}
+@keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.14);}}
+#gate h1{font-size:1.9rem;margin:18px 0 8px;}
+#gate p{color:var(--muted);font-size:.95rem;}
+#gate button{
+  margin-top:26px;background:var(--accent);color:#fff;border:0;cursor:pointer;
+  padding:15px 34px;border-radius:999px;font:700 1rem "Plus Jakarta Sans",sans-serif;
+  box-shadow:0 10px 26px -10px rgba(200,122,125,.8);transition:transform .3s var(--ease);
+}
+#gate button:hover{transform:translateY(-3px);}
+
+/* ---- Sections ---- */
+section{padding:80px 0;opacity:0;transform:translateY(30px);transition:.9s var(--ease);}
+section.in{opacity:1;transform:none;}
+.hero{text-align:center;padding-top:100px;}
+.hero h1{font-size:clamp(2.1rem,7vw,3.4rem);}
+.hero h1 em{font-style:italic;color:var(--accent);}
+.hero p{color:var(--muted);margin-top:16px;}
+
+.count{
+  display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:34px;
+}
+.count div{
+  background:var(--card);border:1px solid var(--border);border-radius:16px;
+  padding:14px 20px;min-width:84px;
+}
+.count b{display:block;font-family:"Playfair Display",serif;font-size:1.7rem;}
+.count span{font-size:.7rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;}
+
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:30px;}
+.gallery figure{
+  background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;
+  transform:rotate(var(--rot,0deg));transition:transform .4s var(--ease);
+}
+.gallery figure:hover{transform:rotate(0) translateY(-6px);}
+.gallery img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;}
+.gallery figcaption{padding:10px 12px;font-size:.8rem;color:var(--muted);}
+
+.letter{
+  background:var(--card);border:1px solid var(--border);border-radius:22px;
+  padding:36px 30px;box-shadow:0 20px 50px -30px rgba(34,38,47,.4);
+}
+.letter h2{font-size:1.7rem;margin-bottom:14px;}
+.letter p{white-space:pre-line;color:#3D4350;}
+.sign{margin-top:22px;font-family:"Playfair Display",serif;font-style:italic;color:var(--accent);font-size:1.2rem;}
+
+.end{text-align:center;padding-bottom:120px;}
+.end h2{font-size:2rem;}
+.end .hearts{font-size:2rem;margin-top:14px;}
+
+/* ---- Music toggle ---- */
+#music{
+  position:fixed;right:16px;bottom:16px;z-index:50;
+  width:48px;height:48px;border-radius:50%;border:1px solid var(--border);
+  background:var(--card);cursor:pointer;font-size:1.2rem;
+  box-shadow:0 8px 22px -10px rgba(34,38,47,.5);
+}
+@media (prefers-reduced-motion:reduce){section{opacity:1;transform:none;}}
+</style>
+</head>
+<body>
+
+<!-- ============ TAP TO BEGIN ============ -->
+<div id="gate">
+  <div>
+    <div class="heart">💌</div>
+    <h1 id="gateTitle">Someone made this for you</h1>
+    <p>Turn your sound on for the full experience 🎵</p>
+    <button id="gateBtn">Tap to begin</button>
+  </div>
+</div>
+
+<main>
+  <section class="hero in">
+    <div class="wrap">
+      <h1>Happy Birthday, <em id="name">Name</em></h1>
+      <p id="subtitle">A little corner of the internet, just for you.</p>
+      <div class="count" id="counter"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2 style="font-size:1.6rem;">Some of my favourite moments</h2>
+      <div class="gallery" id="gallery"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="letter">
+        <h2 id="letterTitle">A letter for you</h2>
+        <p id="letterBody"></p>
+        <div class="sign" id="signature"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="end">
+    <div class="wrap">
+      <h2 id="closing">Here's to many more.</h2>
+      <div class="hearts">💗 💗 💗</div>
+    </div>
+  </section>
+</main>
+
+<button id="music" aria-label="Toggle music" hidden>🔊</button>
+<audio id="audio" loop preload="none"></audio>
+
+<script>
+/* =============================================================
+   EDIT ONLY THIS OBJECT TO PERSONALISE THE GIFT
+   ============================================================= */
+const GIFT = {
+  name:        "Name",
+  gateTitle:   "Someone made this for you",
+  subtitle:    "A little corner of the internet, just for you.",
+
+  /* Counts up from this date. Use "" to hide the counter. */
+  since:       "2023-01-14",
+  counterLabel:"together",
+
+  /* Put files in assets/ and list them here. */
+  photos: [
+    // { src:"assets/photo-1.jpg", caption:"That evening in Rishikesh" },
+  ],
+
+  letterTitle: "A letter for you",
+  letter:      "Write the real message here.\n\nLine breaks work exactly as you type them, so you can keep it as long or as short as it needs to be.",
+  signature:   "— with love",
+  closing:     "Here's to many more.",
+
+  /* Optional background music. Leave "" for silence. */
+  music:       ""
+};
+
+/* ---- Render ---- */
+const $ = (s) => document.querySelector(s);
+
+$("#name").textContent        = GIFT.name;
+$("#gateTitle").textContent   = GIFT.gateTitle;
+$("#subtitle").textContent    = GIFT.subtitle;
+$("#letterTitle").textContent = GIFT.letterTitle;
+$("#letterBody").textContent  = GIFT.letter;
+$("#signature").textContent   = GIFT.signature;
+$("#closing").textContent     = GIFT.closing;
+document.title = GIFT.name + " 💌";
+
+/* Counter */
+if(GIFT.since){
+  const start = new Date(GIFT.since);
+  const days  = Math.floor((Date.now() - start) / 86400000);
+  $("#counter").innerHTML = `
+    <div><b>${days.toLocaleString("en-IN")}</b><span>days ${GIFT.counterLabel}</span></div>
+    <div><b>${Math.floor(days/30)}</b><span>months</span></div>
+    <div><b>${(days*24).toLocaleString("en-IN")}</b><span>hours</span></div>`;
+}
+
+/* Gallery */
+$("#gallery").innerHTML = GIFT.photos.length
+  ? GIFT.photos.map((p,i) => `
+      <figure style="--rot:${(i%2?1:-1)*1.6}deg">
+        <img src="${p.src}" alt="${p.caption||""}" loading="lazy">
+        ${p.caption ? `<figcaption>${p.caption}</figcaption>` : ""}
+      </figure>`).join("")
+  : `<p style="color:var(--muted);font-size:.9rem;">Add photos to the GIFT.photos array.</p>`;
+
+/* Gate + audio (iOS-safe: audio only starts after a real tap) */
+const audio = $("#audio");
+$("#gateBtn").addEventListener("click", () => {
+  $("#gate").classList.add("gone");
+  if(GIFT.music){
+    audio.src = GIFT.music;
+    audio.volume = .5;
+    audio.play().catch(() => {});
+    $("#music").hidden = false;
+  }
+});
+$("#music").addEventListener("click", () => {
+  if(audio.paused){ audio.play(); $("#music").textContent = "🔊"; }
+  else            { audio.pause(); $("#music").textContent = "🔇"; }
+});
+
+/* Scroll reveal */
+const io = new IntersectionObserver((es) => {
+  es.forEach((e) => { if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+}, { threshold:.15 });
+document.querySelectorAll("section").forEach((s) => io.observe(s));
+</script>
+</body>
+</html>

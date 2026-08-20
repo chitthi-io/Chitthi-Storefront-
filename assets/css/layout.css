@@ -1,0 +1,96 @@
+/* ==========================================================================
+   chitthi.io — LAYOUT (containers, sections, grids, footer)
+   ========================================================================== */
+
+.wrap{
+  width:100%;
+  max-width:var(--maxw);
+  margin-inline:auto;
+  padding-inline:var(--gutter);
+}
+
+.sec{ padding:88px 0; position:relative; }
+.sec--tight{ padding-top:34px; }
+.sec--panel{ background:var(--card); border-block:1px solid var(--border); }
+
+.sec-head{ text-align:center; max-width:640px; margin:0 auto 52px; }
+.sec-head h2{ font-size:clamp(1.95rem, 4.2vw, 2.9rem); }
+.sec-head p{ color:var(--muted); margin-top:14px; font-size:1.02rem; }
+
+/* ---------- HERO ---------- */
+.hero{ position:relative; padding:74px 0 62px; text-align:center; overflow:hidden; }
+.hero::before,
+.hero::after{
+  content:""; position:absolute; border-radius:50%;
+  filter:blur(80px); z-index:0; pointer-events:none;
+}
+.hero::before{ width:460px; height:460px; background:rgba(200,122,125,.16); top:-190px; left:-130px; }
+.hero::after { width:420px; height:420px; background:rgba(214,196,168,.22); top:-130px; right:-150px; }
+.hero-in{ position:relative; z-index:1; max-width:860px; margin-inline:auto; }
+.hero h1{ font-size:clamp(2.3rem, 6.4vw, 4.05rem); letter-spacing:-.03em; }
+.hero h1 em{ font-style:italic; color:var(--accent); }
+.hero .sub{
+  color:var(--muted); font-size:clamp(1rem, 1.9vw, 1.12rem);
+  max-width:640px; margin:22px auto 0; line-height:1.7;
+}
+.hero-actions{ display:flex; gap:13px; justify-content:center; flex-wrap:wrap; margin-top:34px; }
+
+.hero-stats{
+  display:flex; justify-content:center; flex-wrap:wrap;
+  margin:52px auto 0; max-width:660px; padding:22px 10px;
+  border:1px solid var(--border); background:var(--card);
+  border-radius:var(--r-lg); box-shadow:var(--sh-sm);
+}
+.hero-stats div{ flex:1; min-width:130px; padding:6px 14px; position:relative; }
+.hero-stats div + div::before{
+  content:""; position:absolute; left:0; top:12%; height:76%; width:1px; background:var(--border);
+}
+.hero-stats b{
+  display:block; font-family:var(--font-display);
+  font-size:1.6rem; font-weight:600;
+}
+.hero-stats span{ font-size:.76rem; color:var(--muted); font-weight:600; letter-spacing:.03em; }
+
+/* ---------- PRODUCT GRID ---------- */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0,1fr));
+  gap:26px;
+  align-items:start;
+}
+
+/* ---------- STEPS ---------- */
+.steps{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; position:relative; }
+.steps::before{
+  content:""; position:absolute; top:34px; left:16%; right:16%; height:2px; z-index:0;
+  background:repeating-linear-gradient(90deg, var(--border) 0 9px, transparent 9px 18px);
+}
+
+/* ---------- PRICING ---------- */
+.tiers{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; align-items:stretch; }
+
+/* ---------- REVIEWS ---------- */
+.reviews{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-bottom:76px; }
+
+/* ---------- FAQ ---------- */
+.faq{ max-width:780px; margin-inline:auto; display:flex; flex-direction:column; gap:12px; }
+
+/* ---------- FOOTER ---------- */
+footer{ border-top:1px solid var(--border); padding:52px 0 34px; margin-top:88px; }
+.f-top{ display:flex; justify-content:space-between; gap:34px; flex-wrap:wrap; margin-bottom:36px; }
+.f-top p{ color:var(--muted); font-size:.9rem; max-width:320px; margin-top:12px; }
+.f-cols{ display:flex; gap:64px; flex-wrap:wrap; }
+.f-col h4{
+  font-family:var(--font-body); font-size:.74rem; font-weight:800;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin-bottom:14px;
+}
+.f-col a{
+  display:block; font-size:.9rem; color:var(--ink-soft); padding:5px 0;
+  transition:color var(--t-fast), transform var(--t-fast);
+}
+.f-col a:hover{ color:var(--accent); transform:translateX(3px); }
+.f-bot{
+  border-top:1px solid var(--border); padding-top:22px;
+  display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap;
+  font-size:.82rem; color:var(--muted);
+}

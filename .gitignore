@@ -1,0 +1,34 @@
+# ---- OS noise ----
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- Editors ----
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ---- Logs ----
+*.log
+npm-debug.log*
+
+# ---- Dependencies / build (not used today, guarded for later) ----
+node_modules/
+dist/
+build/
+.cache/
+.parcel-cache/
+
+# ---- Environment / secrets ----
+.env
+.env.*
+*.pem
+.netrc
+
+# ---- Working files that should not ship ----
+/private/
+/client-assets/
+*.psd
+*.fig

@@ -1,0 +1,61 @@
+/* ==========================================================================
+   chitthi.io — RESPONSIVE
+   Breakpoints: 1024 (tablet · 2 col) · 860 (nav collapse) · 640 (mobile · 1 col)
+   ========================================================================== */
+
+@media (max-width:1024px){
+  .grid{ grid-template-columns:repeat(2, minmax(0,1fr)); }
+
+  .reviews{ grid-template-columns:repeat(2,1fr); }
+  .reviews .review:last-child{ grid-column:1 / -1; }
+
+  .tiers{ grid-template-columns:1fr; max-width:520px; margin-inline:auto; }
+  .tier.feat{ order:-1; }
+}
+
+@media (max-width:860px){
+  .nav-links{ display:none; }
+  .burger{ display:inline-flex; }
+  .mobile-menu{ display:flex; }
+
+  .steps{ grid-template-columns:1fr; gap:38px; }
+  .steps::before{ display:none; }
+
+  .sec{ padding:66px 0; }
+  .band{ padding:44px 24px; }
+}
+
+@media (max-width:640px){
+  .grid,
+  .reviews{ grid-template-columns:1fr; }
+
+  .hero{ padding:52px 0 44px; }
+  .hero-actions .btn{ width:100%; }
+  .hero-stats{ gap:8px; padding:16px 8px; }
+  .hero-stats div{ min-width:44%; }
+  .hero-stats div + div::before{ display:none; }
+
+  .filters{ gap:7px; }
+  .pill{ padding:9px 14px; font-size:.81rem; }
+
+  .card-actions{ grid-template-columns:1fr; }
+
+  .float-wa{ right:14px; bottom:14px; padding:13px 18px; font-size:.85rem; }
+
+  .f-cols{ gap:38px; }
+  footer{ margin-top:64px; }
+}
+
+/* Very small phones */
+@media (max-width:380px){
+  :root{ --gutter:16px; }
+  .brand{ font-size:1.14rem; }
+  .float-wa span.label{ display:none; }
+}
+
+/* Print */
+@media print{
+  .nav, .float-wa, .toast, .modal, .band, .burger, .mobile-menu{ display:none !important; }
+  body{ background:#fff; }
+  .card{ break-inside:avoid; }
+}
