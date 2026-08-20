@@ -109,16 +109,23 @@ CHITTHI.PRODUCTS_DATA = [
     id:       "be-mine-proposal",
     title:    "Playful 'Be Mine' Proposal",
     category: "playful",
-    status:   "soon",
-    repo:     "chitthi-be-mine-proposal",
+    status:   "live",
+    repo:     "Chitthi-Be-Mine-Proposal",
     demoUrl:  null,
     thumb:    null,
     price:    null,
     mrp:      null,
     tag:      "Viral Pick",
     mood:     "🤭 The 'No' Button Runs",
-    desc:     "A cheeky question page where the 'No' button dodges every click and 'Yes' grows bigger, ending in a confetti love letter.",
-    features: ["Runaway 'No' button","Confetti finale","Custom love letter","Screenshot-ready design"],
+    desc:     "The 'No' button runs away and a new kitten meme guilt-trips them on every attempt, while 'Yes' grows 18% bigger each time.",
+    features: [
+      "Runaway 'No' button with touch physics",
+      "6 escalating real kitten memes",
+      "'Yes' grows 18% per attempt",
+      "Confetti + heart shower on yes",
+      "Flip polaroids & handwritten letter",
+      "Celebration soundtrack, iPhone-safe"
+    ],
     icon:     "💍"
   },
   {
