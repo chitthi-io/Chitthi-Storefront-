@@ -193,12 +193,25 @@ between sessions, so re-run `python3 -m playwright install chromium` each time.
    (`assets/img/og-image.png`) served from the canonical Netlify host.
 
 **In flight (21 Aug 2026)**
-10. **3D models.** Owner is sourcing Sketchfab models per
-    `docs/3D-MODELS-SHOPPING-LIST.md` (5 must-haves first: turntable 09,
-    cake 01, paper plane 06, envelope 14, airplane 02). Integration stack:
-    self-hosted three.js + GLTFLoader per repo, render loop pauses offscreen,
-    DPR cap 2, reduced-motion → static frame, 2D fallback when no WebGL.
-    License gate: CC0/purchased only; CC-BY needs a credit line.
+10. **3D models.** License audit done — verdicts in
+    `docs/3D-MODELS-SHOPPING-LIST.md` §0: 10 of 14 models usable (CC-BY,
+    credit line), 4 blocked (airbus 02, chest 08, rose 12, diya 13 — need
+    replacements), envelope-icon 14 too heavy (534k faces — use the 60-face
+    one). Waiting on GLB files: owner downloads from Sketchfab or shares a
+    Sketchfab API token.
+
+**Credentials & private pipeline (21 Aug 2026)**
+- `NETLIFY_AUTH_TOKEN` now lives in `/home/user/.env` (gitignored, chmod 600)
+  alongside `GH_TOKEN`. **Wiped on sandbox reset — owner re-pastes it.**
+- `tools/deploy-private.sh` VALIDATED end-to-end: private repo created
+  (`Chitthi-Delivery-Test`, private:true), Netlify site published
+  (`chitthi-delivery-test`, deploy state ready, Netlify screenshot bot
+  captured the rendered page). Test site KEPT temporarily so the owner can
+  open it in a browser (sandbox egress IP gets 429-throttled by the Netlify
+  edge — browsers on other IPs are unaffected). Delete when confirmed. Gotchas found & fixed: (a) wait loop now polls the deploy API,
+  not the CDN edge — edge polling 429-throttles the caller IP; (b) zip now
+  excludes `.git`; (c) brand-new Netlify sites need a few minutes for SSL —
+  the script reports 'ready but not serving' instead of lying.
 
 ---
 

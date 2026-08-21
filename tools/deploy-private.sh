@@ -118,26 +118,51 @@ SITE_ID=$(echo "$site_json" | python3 -c "import json,sys;print(json.load(sys.st
 
 say "uploading build to netlify"
 rm -f /tmp/chitthi_deploy.zip
-zip -r -q /tmp/chitthi_deploy.zip .
+zip -r -q /tmp/chitthi_deploy.zip . -x ".git/*" ".git"
 curl -sS -o /tmp/priv_deploy.json -X POST \
   -H "Authorization: Bearer $NLTOKEN" \
   -H "Content-Type: application/zip" \
   --data-binary @/tmp/chitthi_deploy.zip \
   "$NL/sites/$SITE_ID/deploys" >/dev/null
 rm -f /tmp/chitthi_deploy.zip
+DEPLOY_ID=$(python3 -c "import json;print(json.load(open('/tmp/priv_deploy.json'))['id'])")
 
 # ------------------------------------------------------------------ 5. wait
-say "waiting for $URL"
+# Poll the deploy API (not the CDN edge) — edge polling burns requests and
+# gets the caller IP throttled. Then a SINGLE edge check confirms serving.
+say "waiting for deploy $DEPLOY_ID to go ready"
+ready=0
 for i in $(seq 1 24); do
-  c=$(curl -sS -o /dev/null -w '%{http_code}' "$URL?cb=$RANDOM")
-  if [ "$c" = "200" ]; then
-    say "live after $((i*10))s"
-    break
-  fi
+  state=$(curl -sS -H "Authorization: Bearer $NLTOKEN" \
+          "$NL/deploys/$DEPLOY_ID" \
+          | python3 -c "import json,sys;print(json.load(sys.stdin).get('state',''))" 2>/dev/null || echo "")
+  if [ "$state" = "ready" ]; then ready=1; break; fi
   sleep 10
+done
+if [ "$ready" != "1" ]; then
+  say "deploy never reached ready — see https://app.netlify.com/projects/$SLUG/deploys"
+  exit 1
+fi
+
+# First-ever deploy on a new site can take a few minutes for the HTTPS cert
+# to provision. One quiet check; loop gently if it is still warming up.
+say "waiting for $URL"
+ok=0
+for i in $(seq 1 12); do
+  c=$(curl -sS -o /dev/null -w '%{http_code}' --max-time 15 "$URL")
+  if [ "$c" = "200" ]; then ok=1; break; fi
+  sleep 20
 done
 
 # ------------------------------------------------------------------ 6. link
+if [ "$ok" != "1" ]; then
+  echo
+  echo "deploy is ready but the URL is not serving yet (SSL may still be"
+  echo "provisioning on this brand-new site). It will come up on its own:"
+  echo "  $URL"
+  echo "Check: https://app.netlify.com/projects/$SLUG/deploys"
+  exit 1
+fi
 echo
 echo "==============================================================="
 echo "  LIVE (private source):  $URL"

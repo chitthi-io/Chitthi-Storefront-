@@ -1,8 +1,45 @@
 # 3D Models — Shopping List & Integration Spec
 
-**Status:** awaiting models from the owner. Integration stack is decided and
-ready — as each model arrives it goes into its template (and the storefront
-hero where marked), tested on mobile, and deployed.
+**Status:** license audit complete (21 Aug 2026). 10 of 14 models are usable
+(CC-BY — credit line required in the keepsake footer). **Waiting on: the GLB
+files** — either uploaded here or downloaded by me once the owner shares a
+Sketchfab account token.
+
+---
+
+## 0. AUDIT RESULTS (from Sketchfab's public API, 21 Aug 2026)
+
+### ✅ Usable — downloadable, CC Attribution (needs a small credit line)
+
+| Model (template) | Faces | Verdict |
+|---|---|---|
+| Turntable (09) — by Mazou | 5,528 | ✅ Ideal poly budget. Platter may need manual separation for the spin. |
+| Birthday cake (01) — by Sakthivel G | 68,750 | ⚠️ Usable but heavy — will perf-test on mobile; fall back to a lighter model if fps drops |
+| Paper plane (06) — by Trockk | 6 | ✅ Ultra-light (stylised origami). |
+| Envelope icon (14) — by Firman Maulana Ihsan | 534,820 | ❌ **Half a million faces — too heavy for phones. Skip; use the 60-face envelope below.** |
+| Golden trophy (10) — by Incg5764 | 7,408 | ✅ |
+| Sitting cat (03) — by 3D Creator | 74,586 | ⚠️ Usable but heavy — perf-test; idle animation only |
+| Gift box (11) — by Neelam Devi | 342 | ✅ "Free Standard" license = attribution required |
+| Heart (05) — by omarelone | 4,800 | ⚠️ **Check the visual first — this is an anatomical heart, not a stylised one. Swap for a cuter model if it looks medical.** |
+| Ornate book (07) — by N8 | 10,971 | ✅ |
+| Envelope (hero + 14 fallback) — by DrewA | 60 | ✅ Perfect for both the hero float and the envelope grid |
+
+### ❌ Blocked — not downloadable / wrong license (need replacements)
+
+| Model (template) | Blocker |
+|---|---|
+| Airbus plane (02) — by academyinnovaworld | All rights reserved, **not downloadable**, 474k faces. Find a CC0/CC-BY low-poly plane instead. |
+| Chest (08) — by sisid | All rights reserved, not downloadable (pity — only 2k faces). Find a CC0/CC-BY chest. |
+| Rose (12) — by greenlive | Sketchfab **paid Standard license**, not free-downloadable. Find a CC0/CC-BY rose. |
+| Diya (13) — by Abdullah | All rights reserved, not downloadable. Find a CC0/CC-BY diya. |
+
+### How to get the 10 usable files (choose one)
+
+- **Option A (owner):** on each model page, hit "Download 3D Model" (needs a
+  Sketchfab account; CC-BY models download free) → upload the GLB files here.
+- **Option B (me):** owner shares a Sketchfab API token
+  (sketchfab.com/settings/password → API section) and I download the 10
+  allowed models automatically.
 
 ---
 
