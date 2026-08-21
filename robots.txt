@@ -6,4 +6,6 @@
 User-agent: *
 Allow: /
 
-Sitemap: /sitemap.xml
+# Absolute URL: on a GitHub Pages PROJECT site a root-relative path
+# ("/sitemap.xml") resolves to the user-site root, which 404s.
+Sitemap: https://chitthi-io.github.io/Chitthi-Storefront-/sitemap.xml
