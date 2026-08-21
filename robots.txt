@@ -1,0 +1,9 @@
+# chitthi.io storefront — robots.txt (2026-08-21)
+# The storefront is fully indexable. Keepsake demo pages carry their own
+# noindex via their HTML (studio privacy rule) — a page-level decision,
+# deliberately not a robots one.
+
+User-agent: *
+Allow: /
+
+Sitemap: /sitemap.xml

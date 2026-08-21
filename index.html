@@ -4,14 +4,36 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>chitthi.io — Interactive Digital Keepsakes, Delivered in 24 Hours</title>
-<meta name="description" content="Custom mini-websites coded for Birthdays, Anniversaries, LDR Couples & Apologies. Delivered in 24 hours via WhatsApp." />
+<!-- ============================================================
+     PRIMARY SEARCH ENGINE METADATA
+     Canonical host: https://chitthi-io.netlify.app (verified live).
+     NOTE: the bare domain chitthi.io does not resolve yet — when the
+     owner registers it and points it at Netlify, swap CANONICAL below.
+     ============================================================ -->
+<title>Chitthi.io — Custom Interactive Digital Gift Websites in India 💌</title>
+<meta name="description" content="Turn your memories, inside jokes, and songs into custom interactive gift websites for Birthdays, Anniversaries &amp; LDR Couples. 24h Delivery via WhatsApp. Starting ₹399." />
+<meta name="keywords" content="digital gift website, custom website gift india, virtual gift for boyfriend, 12 am birthday surprise link, long distance relationship gifts, qr code love letter" />
+<meta name="robots" content="index, follow" />
 <meta name="theme-color" content="#FAF8F5" />
+<link rel="canonical" href="https://chitthi-io.netlify.app/" />
 
-<!-- Open Graph -->
+<!-- OPEN GRAPH (WhatsApp & Instagram rich link preview) -->
 <meta property="og:type" content="website" />
-<meta property="og:title" content="chitthi.io — Interactive Digital Keepsakes" />
-<meta property="og:description" content="Custom mini-websites for Birthdays, Anniversaries, LDR Couples & Apologies. Delivered in 24 hours." />
+<meta property="og:site_name" content="Chitthi.io" />
+<meta property="og:locale" content="en_IN" />
+<meta property="og:url" content="https://chitthi-io.netlify.app/" />
+<meta property="og:title" content="Chitthi.io — Custom Interactive Gift Websites 💌" />
+<meta property="og:description" content="Personalized mini-websites for Birthdays, Anniversaries &amp; LDR Couples. Delivered in 24 hours with custom music, photos &amp; QR card." />
+<meta property="og:image" content="https://chitthi-io.netlify.app/assets/img/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Chitthi.io — handcoded interactive digital keepsakes, delivered in 24 hours" />
+
+<!-- TWITTER CARD (mirrors OpenGraph) -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Chitthi.io — Custom Interactive Gift Websites 💌" />
+<meta name="twitter:description" content="Personalized mini-websites for Birthdays, Anniversaries &amp; LDR Couples. Delivered in 24 hours." />
+<meta name="twitter:image" content="https://chitthi-io.netlify.app/assets/img/og-image.png" />
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,8 +43,6 @@
 <!-- Icons -->
 <link rel="icon" href="assets/img/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-<meta property="og:image" content="https://chitthi-io.github.io/Chitthi-Storefront-/assets/img/logo.png" />
-<meta property="og:url" content="https://chitthi-io.github.io/Chitthi-Storefront-/" />
 
 <!-- Stylesheets (load order matters: tokens -> base -> layout -> components -> responsive) -->
 <link rel="stylesheet" href="assets/css/tokens.css?v=d55598dc">
@@ -30,6 +50,89 @@
 <link rel="stylesheet" href="assets/css/layout.css?v=ef28b476">
 <link rel="stylesheet" href="assets/css/components.css?v=b556a2f1">
 <link rel="stylesheet" href="assets/css/responsive.css?v=d1b9c7a7">
+
+<!-- ============================================================
+     STRUCTURED DATA — PRODUCT / WEBSITE / FAQ
+     Google requires schema to match VISIBLE on-page content, so:
+       * offers mirror the real published prices (₹399–₹1,299, 14 products)
+       * FAQ mirrors assets/js/data.js FAQ_DATA verbatim
+       * aggregateRating is deliberately ABSENT: REVIEWS_DATA ships empty
+         (honesty rule) and Google penalizes fabricated ratings. Add it
+         here — with real numbers — once real reviews exist.
+     ============================================================ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Chitthi.io Custom Digital Gift Website",
+  "description": "Hand-coded interactive mini-websites for birthdays, anniversaries, and long-distance relationships — with your photos, names, dates and music. Delivered as a private link within 24 hours.",
+  "image": "https://chitthi-io.netlify.app/assets/img/og-image.png",
+  "url": "https://chitthi-io.netlify.app/",
+  "brand": {
+    "@type": "Brand",
+    "name": "Chitthi.io"
+  },
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "INR",
+    "lowPrice": "399",
+    "highPrice": "1299",
+    "offerCount": "14",
+    "availability": "https://schema.org/InStock",
+    "url": "https://chitthi-io.netlify.app/#pricing"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Chitthi.io",
+  "url": "https://chitthi-io.netlify.app/",
+  "description": "Custom interactive digital gift websites for birthdays, anniversaries and long-distance couples. Delivered in 24 hours via WhatsApp.",
+  "inLanguage": "en-IN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How fast will I actually receive my link?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Standard delivery is within 24 hours of receiving your photos, names and payment. Most orders go out in 10–14 hours, and Deluxe Custom orders ship in 12 hours."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are my photos and messages private?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, completely. Your keepsake lives on a private, unlisted link that is never indexed by Google and never listed on this site. Your photos are never reused in demos or marketing, and the original files are permanently deleted 7 days after delivery unless you ask for them to be kept for revisions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will the background music play on iPhone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It will — with one tap. iOS blocks audio from auto-playing, so every template opens with a gentle 'Tap to begin' screen. One tap unlocks the music and the experience runs exactly as designed on Safari, Chrome, and inside the Instagram or WhatsApp in-app browser."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I want changes after delivery?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Keepsake package includes 2 free revision rounds and Deluxe Custom includes unlimited revisions for 7 days. Typos, swapped photos and text tweaks are usually turned around within an hour."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -303,7 +406,7 @@
 
 <!-- Scripts (classic, no modules — works over file:// too) -->
 <script src="assets/js/config.js?v=c67178f0"></script>
-<script src="assets/js/data.js?v=0604dcf1"></script>
+<script src="assets/js/data.js?v=59f898b0"></script>
 <script src="assets/js/render.js?v=8fa11b5a"></script>
 <script src="assets/js/main.js?v=29d53899"></script>
 </body>
