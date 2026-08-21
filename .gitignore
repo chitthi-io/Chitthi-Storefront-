@@ -50,3 +50,4 @@ build/
 
 # generated thumbnails are build output, not source
 /thumbnails/
+/models-3d/

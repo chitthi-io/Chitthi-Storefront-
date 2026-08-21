@@ -193,12 +193,16 @@ between sessions, so re-run `python3 -m playwright install chromium` each time.
    (`assets/img/og-image.png`) served from the canonical Netlify host.
 
 **In flight (21 Aug 2026)**
-10. **3D models.** License audit done — verdicts in
-    `docs/3D-MODELS-SHOPPING-LIST.md` §0: 10 of 14 models usable (CC-BY,
-    credit line), 4 blocked (airbus 02, chest 08, rose 12, diya 13 — need
-    replacements), envelope-icon 14 too heavy (534k faces — use the 60-face
-    one). Waiting on GLB files: owner downloads from Sketchfab or shares a
-    Sketchfab API token.
+10. **3D models.** ✅ 4 INTEGRATED AND LIVE (09 turntable, 10 trophy,
+    11 gift box, 14 envelope) — verified in production with real WebGL
+    rendering. Owner's Sketchfab token in `.env`. Remaining: 6 GLBs staged in
+    `models-3d/` (gitignored) for templates 01 cake, 03 cat, 05 heart,
+    06 plane, 07 book (+ envelope for the storefront hero). Those 5 templates
+    live in their own repos — clone each, add `three.min.js` +
+    `GLTFLoader.js` (from `build-shared/lib3d/`) + `model/model.glb`, reuse
+    the init snippet from `build-vinyl/index.html` (search `initTurntable3D`),
+    watch the TDZ trap: never declare the 3D init inside a function that
+    calls it. 4 models still blocked (airbus 02, chest 08, rose 12, diya 13).
 
 **Credentials & private pipeline (21 Aug 2026)**
 - `NETLIFY_AUTH_TOKEN` now lives in `/home/user/.env` (gitignored, chmod 600)

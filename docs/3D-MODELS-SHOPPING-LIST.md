@@ -1,9 +1,18 @@
 # 3D Models — Shopping List & Integration Spec
 
-**Status:** license audit complete (21 Aug 2026). 10 of 14 models are usable
-(CC-BY — credit line required in the keepsake footer). **Waiting on: the GLB
-files** — either uploaded here or downloaded by me once the owner shares a
-Sketchfab account token.
+**Status:** ✅ 4 models INTEGRATED AND LIVE (21 Aug 2026, after the owner
+shared the Sketchfab token). 6 models downloaded, staged in `models-3d/`
+(gitignored), awaiting integration into the remaining template repos.
+
+**LIVE NOW (verified in production, WebGL-checked):**
+- 09 Vintage Vinyl → real 3D turntable (`platine1` platter spins on needle-drop)
+- 10 Couple Trivia → 3D golden trophy rises on a perfect score
+- 11 Scratch Surprise → 3D gift box whose lid springs open at reveal
+- 14 Open When → floating 3D envelope in the gate
+- Stack: self-hosted three.js r128 (UMD) + GLTFLoader + model.glb per repo;
+  render loop pauses offscreen; DPR capped at 2; reduced-motion renders a
+  static frame; WebGL absence = graceful 2D fallback; CC-BY credit line in
+  each footer.
 
 ---
 
