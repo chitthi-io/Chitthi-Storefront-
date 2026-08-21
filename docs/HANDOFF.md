@@ -98,7 +98,8 @@ Do **not** grant `Administration` — that carries repo deletion.
 ├── brand/                       original logo + mockups, archived
 ├── tools/
 │   ├── generate_thumbnail.py    1920x1080 editorial thumbnail engine (PIL)
-│   ├── deploy.sh                idempotent GitHub Pages deploy
+│   ├── deploy.sh                idempotent GitHub Pages deploy (PUBLIC — demos only)
+│   ├── deploy-private.sh        PRIVATE repo + Netlify deploy for REAL orders
 │   ├── bust.py                  cache-busting stamper  ← MUST run before each commit
 │   └── fonts/                   Playfair, Jakarta, Caveat (OFL)
 ├── docs/
@@ -181,13 +182,23 @@ between sessions, so re-run `python3 -m playwright install chromium` each time.
 5. Two CC0 Chopin tracks are shared across eight templates.
 6. Voice-note players are wired but every `voiceNote` is `null`.
 
-**Decisions the owner must make**
-7. **Source visibility.** Repos are public and demo URLs contain the repo name,
-   so anyone can read the code. Removing the storefront's source links was
-   cosmetic. Real fix: private repos + Netlify-hosted demos.
+**Decisions — status updated 21 Aug 2026**
+7. ~~**Source visibility**~~ ✅ **RESOLVED** — `tools/deploy-private.sh` ships
+   real orders to a PRIVATE repo + Netlify site (GitHub Pages on private repos
+   needs a paid plan). Awaiting the owner's `NETLIFY_AUTH_TOKEN` for the first
+   run. Demos stay public. See `docs/CLIENT-PLAYBOOK.md` §5.
 8. **Meme licensing.** Template 03 self-hosts 6 real kitten GIFs sourced from
    Tenor. Fine for a demo; get licensed art before scaling commercially.
-9. `og:image` still points at the GitHub Pages URL, not the Netlify domain.
+9. ~~`og:image`~~ ✅ **DONE** — now a generated 1200×630 brand card
+   (`assets/img/og-image.png`) served from the canonical Netlify host.
+
+**In flight (21 Aug 2026)**
+10. **3D models.** Owner is sourcing Sketchfab models per
+    `docs/3D-MODELS-SHOPPING-LIST.md` (5 must-haves first: turntable 09,
+    cake 01, paper plane 06, envelope 14, airplane 02). Integration stack:
+    self-hosted three.js + GLTFLoader per repo, render loop pauses offscreen,
+    DPR cap 2, reduced-motion → static frame, 2D fallback when no WebGL.
+    License gate: CC0/purchased only; CC-BY needs a credit line.
 
 ---
 

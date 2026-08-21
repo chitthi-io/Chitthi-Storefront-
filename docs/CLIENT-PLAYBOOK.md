@@ -123,3 +123,44 @@ Never send a link that has not cleared all of these.
 
 > Storefront prices are published in `assets/js/data.js` (per-product `price`/`mrp`).
 > Spark ₹399 · Keepsake ₹699 · Deluxe ₹1,299. Change tiers there, then run `tools/bust.py`.
+
+---
+
+## 5. Deploying a Real Order (PRIVATE — never on a public repo)
+
+Real customer keepsakes hold their photos, names and private letters. They
+must never sit in a public repository, so they take a different route from
+the template demos:
+
+```bash
+# one-time owner step: create a Netlify personal access token
+#   https://app.netlify.com/user/applications#personal-access-tokens
+
+export GH_TOKEN=ghp_xxx
+export NETLIFY_AUTH_TOKEN=nfp_xxx
+
+# every real order:
+tools/deploy-private.sh Chitthi-Anya-Bday chitthi-anya-bday \
+  "personalise for Anya's birthday" build-anya
+```
+
+What happens:
+
+1. `Chitthi-Anya-Bday` is created **private** on GitHub (source locked away).
+2. The build is pushed there.
+3. The same folder is published to `https://chitthi-anya-bday.netlify.app`
+   (GitHub Pages needs a paid plan for private repos, so Netlify hosts real
+   orders).
+4. The script waits for the first HTTP 200 and prints the link for the
+   WhatsApp delivery message.
+
+Rules:
+
+- **Never** deploy a real order with `tools/deploy.sh` (that one is public
+  Pages, for template demos only).
+- One unique slug per customer, forever. Re-running the same slug = revision
+  deploy, which is exactly what the 24-hour revision guarantee needs.
+- The keepsake HTML already carries `noindex,nofollow` — private-by-obscurity
+  stays the delivery model.
+- `DRY=1 tools/deploy-private.sh ...` prints the plan without any calls —
+  useful for checking a slug before going live.
