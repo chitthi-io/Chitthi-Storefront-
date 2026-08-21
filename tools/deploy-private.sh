@@ -145,7 +145,23 @@ if [ "$ready" != "1" ]; then
 fi
 
 # First-ever deploy on a new site can take a few minutes for the HTTPS cert
-# to provision. One quiet check; loop gently if it is still warming up.
+# to provision (API-created sites occasionally miss the auto-provision
+# trigger). Poll the SSL endpoint first, then a quiet edge check.
+say "waiting for HTTPS cert on the new site"
+ssl_ok=0
+for i in $(seq 1 12); do
+  code=$(curl -sS -o /dev/null -w '%{http_code}' -H "Authorization: Bearer $NLTOKEN" \
+         "$NL/sites/$SITE_ID/ssl")
+  if [ "$code" = "200" ]; then ssl_ok=1; break; fi
+  sleep 20
+done
+if [ "$ssl_ok" != "1" ]; then
+  say "cert did not provision automatically after 4 minutes."
+  say "Owner fix (30 seconds): Netlify dashboard → $SLUG → Domain management"
+  say "→ HTTPS → Provision certificate. Then re-run this command."
+  exit 1
+fi
+
 say "waiting for $URL"
 ok=0
 for i in $(seq 1 12); do
