@@ -193,9 +193,11 @@ between sessions, so re-run `python3 -m playwright install chromium` each time.
    (`assets/img/og-image.png`) served from the canonical Netlify host.
 
 **In flight (21 Aug 2026)**
-10. **3D models.** ✅ 4 INTEGRATED AND LIVE (09 turntable, 10 trophy,
-    11 gift box, 14 envelope) — verified in production with real WebGL
-    rendering. Owner's Sketchfab token in `.env`. Remaining: 6 GLBs staged in
+10. **3D models.** ✅ 4 INTEGRATED AND LIVE, FIXED & PIXEL-VERIFIED
+    21 Aug 2026 (09 turntable, 10 trophy, 11 gift box, 14 envelope). First
+    pass shipped visually broken — the production rules are in
+    `docs/3D-MODELS-SHOPPING-LIST.md` (envmap for metals, kept-mesh bbox
+    fit, no root rotation, flat-model orientation, lid alignment, pixel QA). Owner's Sketchfab token in `.env`. Remaining: 6 GLBs staged in
     `models-3d/` (gitignored) for templates 01 cake, 03 cat, 05 heart,
     06 plane, 07 book (+ envelope for the storefront hero). Those 5 templates
     live in their own repos — clone each, add `three.min.js` +

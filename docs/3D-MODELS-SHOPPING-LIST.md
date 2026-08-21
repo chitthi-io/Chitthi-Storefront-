@@ -4,15 +4,35 @@
 shared the Sketchfab token). 6 models downloaded, staged in `models-3d/`
 (gitignored), awaiting integration into the remaining template repos.
 
-**LIVE NOW (verified in production, WebGL-checked):**
-- 09 Vintage Vinyl → real 3D turntable (`platine1` platter spins on needle-drop)
-- 10 Couple Trivia → 3D golden trophy rises on a perfect score
-- 11 Scratch Surprise → 3D gift box whose lid springs open at reveal
-- 14 Open When → floating 3D envelope in the gate
-- Stack: self-hosted three.js r128 (UMD) + GLTFLoader + model.glb per repo;
-  render loop pauses offscreen; DPR capped at 2; reduced-motion renders a
-  static frame; WebGL absence = graceful 2D fallback; CC-BY credit line in
-  each footer.
+**LIVE NOW (fixed & re-verified 21 Aug 2026, after the first visual pass
+shipped broken models):**
+- 09 Vintage Vinyl → 3D turntable, centred & lit, platter spins on needle-drop
+- 10 Couple Trivia → golden trophy on perfect score (was black — metals need
+  an environment map)
+- 11 Scratch Surprise → gift box, ground plane + lamp props dropped, lid
+  hinges open from its back edge
+- 14 Open When → envelope stands facing the camera (was lying flat/edge-on)
+
+**Production 3D engine rules (learned the hard way — follow exactly):**
+1. Metallic PBR materials render BLACK without an environment map. Always
+   `PMREMGenerator + RoomEnvironment` (self-hosted examples/js file) with
+   `outputEncoding = sRGBEncoding` and `ACESFilmicToneMapping`.
+2. Never scale/centre with the naive whole-scene Box3 — Sketchfab models
+   contain ground planes (40×40), lamp props and far-outlier meshes that
+   inflate the box and shrink the model. Fit on KEPT meshes only: drop
+   flat ground planes (y-thickness < 5% of x/z span, area > 8), named junk
+   (per-model drop list from `tools`-style GLB analysis), everything else.
+3. Never rotate the model ROOT for idle motion — offset pivots make it
+   orbit out of frame. Spin named nodes only, or float via position.
+4. Models may be modelled lying flat (envelope) — check the y-extent and
+   rotate `x = -π/2` to face the camera.
+5. Lids/parts can be offset in source (gift box lid at z=1.1) — align via
+   per-part Box3 before scaling the parent.
+6. QA is pixel-based (Playwright + PIL): coverage % and mean RGB inside the
+   mount, sampled against the mount's LOCAL background — a model can render
+   with zero JS errors and still be invisible (envelope was 1.5% coverage).
+7. `models-3d/preview.html` shows every staged model with the production
+   normalizer — always eyeball a model there before integrating it.
 
 ---
 
