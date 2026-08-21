@@ -1,4 +1,4 @@
-# The 8 Templates — Build Status & Specs
+# The 14 Templates — Build Status & Specs
 
 One repo per template. The storefront links to each via GitHub Pages.
 A card only goes `status: "live"` once the site behind it actually exists.
@@ -8,11 +8,17 @@ A card only goes `status: "live"` once the site behind it actually exists.
 | 01 | A Midnight Keepsake | `Chitthi-Happy-Birthday-1` | 🟢 **Live** |
 | 02 | Until We Meet Again | `Chitthi-Until-We-Meet-Again` | 🟢 **Live** |
 | 03 | Playful 'Be Mine' Proposal | `Chitthi-Be-Mine-Proposal` | 🟢 **Live** |
-| 04 | The Retro Polaroid Scrapbook | `Chitthi-Polaroid-Scrapbook` | ⚪ Not built |
-| 05 | Forever & Always Anniversary Reel | `Chitthi-Anniversary-Reel` | ⚪ Not built |
-| 06 | The Paper Plane Apology | `Chitthi-Paper-Plane-Apology` | ⚪ Not built |
-| 07 | Best Friend Roast & Toast Book | `Chitthi-Roast-And-Toast` | ⚪ Not built |
-| 08 | The Birthday Time Capsule | `Chitthi-Time-Capsule` | ⚪ Not built |
+| 04 | The Retro Polaroid Scrapbook | `Chitthi-Polaroid-Scrapbook` | 🟢 **Live** |
+| 05 | Forever & Always Anniversary Reel | `Chitthi-Anniversary-Reel` | 🟢 **Live** |
+| 06 | The Paper Plane Apology | `Chitthi-Paper-Plane-Apology` | 🟢 **Live** |
+| 07 | Best Friend Roast & Toast Book | `Chitthi-Roast-And-Toast` | 🟢 **Live** |
+| 08 | The Birthday Time Capsule | `Chitthi-Time-Capsule` | 🟢 **Live** |
+| 09 | The Vintage Vinyl Keepsake | `Chitthi-Vinyl-Keepsake` | 🟢 **Live** (21 Aug 2026) |
+| 10 | The Couple Trivia Challenge | `Chitthi-Couple-Trivia` | 🟢 **Live** (21 Aug 2026) |
+| 11 | Scratch-to-Reveal Surprise | `Chitthi-Scratch-Surprise` | 🟢 **Live** (21 Aug 2026) |
+| 12 | The Forever Floral Bouquet | `Chitthi-Floral-Bouquet` | 🟢 **Live** (21 Aug 2026) |
+| 13 | Royal Wedding Save-The-Date | `Chitthi-Royal-Wedding` | 🟢 **Live** (21 Aug 2026) |
+| 14 | The 'Open When' Mood Box | `Chitthi-Open-When-Box` | 🟢 **Live** (21 Aug 2026) |
 
 ---
 
