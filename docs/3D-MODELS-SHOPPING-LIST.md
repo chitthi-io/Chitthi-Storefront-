@@ -4,9 +4,10 @@
 shared the Sketchfab token). 6 models downloaded, staged in `models-3d/`
 (gitignored), awaiting integration into the remaining template repos.
 
-**LIVE NOW (fixed & re-verified 21 Aug 2026, after the first visual pass
-shipped broken models):**
-- 09 Vintage Vinyl → 3D turntable, centred & lit, platter spins on needle-drop
+**LIVE NOW (21 Aug 2026):**
+- 09 Vintage Vinyl → **owner reverted to the hand-built CSS turntable** — it
+  has the drag tonearm, groove-drop start, and looks sharper than the model.
+  The 3D turntable was removed from the site and repo entirely.
 - 10 Couple Trivia → golden trophy on perfect score (was black — metals need
   an environment map)
 - 11 Scratch Surprise → gift box, ground plane + lamp props dropped, lid

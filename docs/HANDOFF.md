@@ -193,8 +193,11 @@ between sessions, so re-run `python3 -m playwright install chromium` each time.
    (`assets/img/og-image.png`) served from the canonical Netlify host.
 
 **In flight (21 Aug 2026)**
-10. **3D models.** ✅ 4 INTEGRATED AND LIVE, FIXED & PIXEL-VERIFIED
-    21 Aug 2026 (09 turntable, 10 trophy, 11 gift box, 14 envelope). First
+10. **3D models.** 3 remain live (10 trophy, 11 gift box, 14 envelope) —
+    09's 3D turntable was REMOVED on owner request and the hand-built CSS
+    turntable restored (drag tonearm + spin). If the owner changes their
+    mind, the integration pattern is intact in git history (`model/model.glb`
+    gone from the repo — re-copy from `models-3d/turntable-09/`). First
     pass shipped visually broken — the production rules are in
     `docs/3D-MODELS-SHOPPING-LIST.md` (envmap for metals, kept-mesh bbox
     fit, no root rotation, flat-model orientation, lid alignment, pixel QA). Owner's Sketchfab token in `.env`. Remaining: 6 GLBs staged in
