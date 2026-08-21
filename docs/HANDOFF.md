@@ -1,7 +1,15 @@
 # CHITTHI.IO — SESSION HANDOFF
 
 **Everything needed to continue this project in a new chat, with a new agent, or by hand.**
-Last verified: 20 Aug 2026. All checks below were run live, not recalled.
+Last verified: 21 Aug 2026. All checks below were run live, not recalled.
+
+**Update 21 Aug 2026 — the 14-template mandate shipped.** Templates 09–14 were
+built, deployed and added to the storefront in one session (commits `57cca55`
+and before). Six new repos live under `chitthi-io`, all demo URLs HTTP 200,
+storefront now shows 14 priced cards. Delivery package: `docs/DELIVERY-PACKAGE-2026-08-21.md`.
+All six new builds carry **sample data** (Anya & Prateek) — same caveats as
+templates 01–08. The two CC0 tracks are still the only audio (mood-mapped:
+romantic → track A, playful → track B).
 
 ---
 
@@ -40,8 +48,14 @@ within 24 hours. A public storefront lists the templates.
 | 06 | Paper Plane Apology | `Chitthi-Paper-Plane-Apology` | `/Chitthi-Paper-Plane-Apology/` |
 | 07 | Roast & Toast Book | `Chitthi-Roast-And-Toast` | `/Chitthi-Roast-And-Toast/` |
 | 08 | Birthday Time Capsule | `Chitthi-Time-Capsule` | `/Chitthi-Time-Capsule/` |
+| 09 | Vintage Vinyl Keepsake | `Chitthi-Vinyl-Keepsake` | `/Chitthi-Vinyl-Keepsake/` |
+| 10 | Couple Trivia Challenge | `Chitthi-Couple-Trivia` | `/Chitthi-Couple-Trivia/` |
+| 11 | Scratch-to-Reveal Surprise | `Chitthi-Scratch-Surprise` | `/Chitthi-Scratch-Surprise/` |
+| 12 | Forever Floral Bouquet | `Chitthi-Floral-Bouquet` | `/Chitthi-Floral-Bouquet/` |
+| 13 | Royal Wedding Save-The-Date | `Chitthi-Royal-Wedding` | `/Chitthi-Royal-Wedding/` |
+| 14 | 'Open When' Mood Box | `Chitthi-Open-When-Box` | `/Chitthi-Open-When-Box/` |
 
-All prefixed `https://chitthi-io.github.io`. GitHub account: **`chitthi-io`** (9 repos, all public).
+All prefixed `https://chitthi-io.github.io`. GitHub account: **`chitthi-io`** (15 repos, all public).
 
 ---
 
