@@ -209,6 +209,22 @@ between sessions, so re-run `python3 -m playwright install chromium` each time.
     watch the TDZ trap: never declare the 3D init inside a function that
     calls it. 4 models still blocked (airbus 02, chest 08, rose 12, diya 13).
 
+**⚠ NETLIFY DEPLOY FREEZE (21 Aug 2026) — read before touching Netlify**
+- The account ("AnyWhereStranger", slug `anywherestranger`) hit
+  **"Account credit usage exceeded"**. EVERY new deploy is blocked — auto
+  builds fail with "Skipped due to account credit usage exceeded" and even
+  manual zip deploys return `{"error":"Account credit usage exceeded - new
+  deploys are blocked until credits are added"}`.
+- Until the owner adds credits/upgrades or the monthly reset arrives,
+  chitthi-io.netlify.app serves the last successful build (commit
+  `3410754`) — it is STALE by a few commits (missing the GSC verification
+  tag + later docs-only commits only touched docs).
+- `tools/deploy-storefront-netlify.sh` exists and will work again the moment
+  the freeze lifts (manual upload = no build minutes). Run it once to catch
+  Netlify up.
+- GitHub Pages remains fully deployable and is now the freshest host —
+  keep treating it as the hot path while Netlify is frozen.
+
 **Credentials & private pipeline (21 Aug 2026)**
 - `NETLIFY_AUTH_TOKEN` now lives in `/home/user/.env` (gitignored, chmod 600)
   alongside `GH_TOKEN`. **Wiped on sandbox reset — owner re-pastes it.**
